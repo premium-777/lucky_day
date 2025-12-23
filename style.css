@@ -669,3 +669,27 @@ footer {
     margin: 0 auto;
 }
 }
+/* Анимация для обновления отзывов */
+.testimonial {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.testimonial-updating {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+/* Улучшаем внешний вид для двух отзывов */
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .testimonials-container {
+        grid-template-columns: 1fr;
+    }
+}
