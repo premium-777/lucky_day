@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксклюзивный генератор абсурдных подарков | Limited Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>ExclusiveGifts</h1>
+                    <p>Premium Collection</p>
+                </div>
+            </div>
+            <div class="header-tagline">
+                <p>750 уникальных подарков</p>
+                <div class="divider"></div>
+                <p>Только для избранных</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Эксклюзивный генератор <span class="highlight">абсурдных подарков</span></h2>
+                    <p class="hero-subtitle">Уникальная возможность получить подарок, за который нужно заплатить</p>
+                    <div class="countdown-container">
+                        <h3>Предложение исчезнет через:</h3>
+                        <div class="countdown">
+                            <div class="countdown-item">
+                                <span id="days">00</span>
+                                <p>Дней</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <span id="hours">00</span>
+                                <p>Часов</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <span id="minutes">00</span>
+                                <p>Минут</p>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-item">
+                                <span id="seconds">00</span>
+                                <p>Секунд</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-decoration">
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                    <div class="decoration-circle"></div>
+                </div>
+            </section>
+
+            <section class="gift-generator">
+                <div class="generator-header">
+                    <h3>Ваш эксклюзивный подарок</h3>
+                    <p>Нажмите кнопку, чтобы получить уникальное предложение</p>
+                </div>
+                
+                <div class="gift-card">
+                    <div class="gift-card-header">
+                        <div class="gift-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>PREMIUM</span>
+                        </div>
+                        <div class="gift-id">ID: <span id="gift-id">000</span></div>
+                    </div>
+                    
+                    <div class="gift-content">
+                        <div class="gift-icon">
+                            <i class="fas fa-gift" id="gift-main-icon"></i>
+                        </div>
+                        <div class="gift-details">
+                            <h4 id="gift-title">Нажмите "Сгенерировать подарок"</h4>
+                            <p id="gift-description">Здесь появится описание вашего эксклюзивного подарка, за который нужно заплатить</p>
+                            <div class="gift-price">
+                                <div class="original-price" id="original-price">9999 ₽</div>
+                                <div class="discount-price" id="discount-price">7999 ₽</div>
+                                <div class="discount-percent" id="discount-percent">-20%</div>
+                            </div>
+                            <div class="gift-timer">
+                                <i class="fas fa-clock"></i>
+                                <span>Предложение действительно: <strong id="gift-timer">15:00</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-footer">
+                        <div class="gift-condition">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <span>Это подарок, но за него нужно заплатить</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="generator-controls">
+                    <button id="generate-btn" class="generate-btn">
+                        <i class="fas fa-magic"></i>
+                        <span>Сгенерировать подарок</span>
+                    </button>
+                    <p class="hint">Каждый подарок уникален и абсолютно бесполезен!</p>
+                </div>
+                
+                <div class="counter">
+                    <p>Осталось подарков: <span id="gifts-left">750</span> из 750</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <h3>Почему наши подарки особенные</h3>
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Подарок, который стоит денег</h4>
+                        <p>Уникальная возможность заплатить за то, что вам совершенно не нужно</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-ban"></i>
+                        </div>
+                        <h4>Абсолютная бесполезность</h4>
+                        <p>Каждый подарок тщательно отобран, чтобы быть максимально ненужным</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h4>Мнимая скидка</h4>
+                        <p>Скидка на то, что вы никогда не купили бы по полной цене</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4>Эксклюзивность</h4>
+                        <p>Только для избранных, способных оценить абсурдность предложения</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="testimonials">
+                <h3>Отзывы довольных клиентов</h3>
+                <div class="testimonials-container">
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            <p>"Я получил скидку на курсы по садоводству, хотя живу в однокомнатной квартире. Спасибо за этот бесценный опыт!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <p><strong>Игорь С.</strong>, владелец кактуса</p>
+                        </div>
+                    </div>
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            <p>"Мне предложили подарок - скидку на аренду яхты. У меня морская болезнь и нет выхода к морю. Идеально!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <p><strong>Анна К.</strong>, жительница Сибири</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <div class="footer-content">
+                <p>© 2023 ExclusiveGifts. Все подарки являются абсурдными и бесполезными. Это сайт-пранк.</p>
+                <p>Создано для развлечения и сатиры на современный маркетинг.</p>
+                <div class="footer-links">
+                    <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#"><i class="fas fa-code"></i> Исходный код</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
