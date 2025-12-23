@@ -257,8 +257,8 @@ function generateRandomGift() {
         return;
     }
     
-    // Выбираем случайный подарок из массива
-    const randomIndex = Math.floor(Math.abs(Math.sin(generatedGifts.length) * 1000)) % absurdGifts.length;
+    // Более случайный выбор подарка
+    const randomIndex = Math.floor(Math.random() * absurdGifts.length);
     const gift = absurdGifts[randomIndex];
     
     // Генерируем уникальный ID
@@ -272,7 +272,7 @@ function generateRandomGift() {
     giftDescription.textContent = gift.description;
     originalPrice.textContent = `${gift.originalPrice.toLocaleString()} ₽`;
     discountPrice.textContent = `${discountedPrice.toLocaleString()} ₽`;
-    discountPercent.textContent = `-${gift.discount}%`;
+    discountPercent.textContent = gift.discount > 0 ? `-${gift.discount}%` : "Без скидки";
     giftMainIcon.className = gift.icon;
     giftIdElement.textContent = giftId;
     
