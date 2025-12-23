@@ -1,3 +1,181 @@
+// Массив с отзывами
+const testimonials = [
+    {
+        text: "Я получил скидку на курсы по садоводству, хотя живу в однокомнатной квартире. Спасибо за этот бесценный опыт!",
+        author: "Игорь С., владелец кактуса"
+    },
+    {
+        text: "Мне предложили подарок - скидку на аренду яхты. У меня морская болезнь и нет выхода к морю. Идеально!",
+        author: "Анна К., жительница Сибири"
+    },
+    {
+        text: "Купил цифровую пыль. Файл весит 0 КБ, как и обещали. Теперь я чувствую себя просветленным и минималистичным. Спасибо!",
+        author: "Максим Т., коллекционер невесомого"
+    },
+    {
+        text: "Определитель одеял изменил мою жизнь! Теперь я точно знаю, что все одеяла в доме - мои. Жена спит под пальто.",
+        author: "Алексей В., владелец 5 одеял"
+    },
+    {
+        text: "Аромат 'Пахнет пукнушками' - это шедевр! На работе все спрашивают, чем это я так смело пахну. Карьера пошла вверх!",
+        author: "Сергей Л., офисный смельчак"
+    },
+    {
+        text: "После курса по плетению лаптей я открыл свой бизнес. Правда, клиентов пока нет, но зато лапти красивые!",
+        author: "Николай П., ремесленник-энтузиаст"
+    },
+    {
+        text: "Купил невидимый курсор. Теперь я трачу больше времени на поиск курсора, чем на работу. Продуктивность упала, зато осознанность выросла!",
+        author: "Дмитрий К., digital-ниндзя"
+    },
+    {
+        text: "Плачу $9.99 в месяц за отписку от писем. Это дешевле, чем терапия по лечению спамофобии. Рекомендую!",
+        author: "Ольга М., антиспам-активист"
+    },
+    {
+        text: "Пазл 'Дзен и ярость' действительно работает! Первые 2 недели - дзен, потом - чистая ярость. Теперь я понимаю буддийских монахов.",
+        author: "Артем С., искатель просветления"
+    },
+    {
+        text: "Сертификат на отложенные решения - гениально! Заплатил год назад, до сих пор не решил, что мне не нужно. Ощущение, что подарок еще впереди!",
+        author: "Владимир П., мастер прокрастинации"
+    },
+    {
+        text: "Курс по строительству иглу в Сочи - это было незабываемо! Соседи до сих пор вспоминают мой снежный домик, который растаял за 15 минут.",
+        author: "Михаил Р., южный строитель"
+    },
+    {
+        text: "Золочение холодильника сделало его в 3 раза дороже! Теперь он не только охлаждает, но и слепит глаза. Браво!",
+        author: "Екатерина З., любительница блеска"
+    },
+    {
+        text: "Набор для червей оживил мою квартиру! Теперь у меня есть питомцы, которые не шумят и едят отходы. Мечта!",
+        author: "Алина В., городская фермерша"
+    },
+    {
+        text: "Синхронное плавание в одиночку - это новый вид медитации. Особенно когда пытаешься синхронизироваться с самим собой.",
+        author: "Татьяна У., одиночный синхронист"
+    },
+    {
+        text: "Облачный попкорн - это будущее! Жаль, что облака в моем регионе не подходят для приготовления. Но я верю в технологию!",
+        author: "Павел Г., футуролог-кулинар"
+    }
+];
+
+// Функция для генерации случайных отзывов
+function generateRandomTestimonials() {
+    // Создаем копию массива, чтобы не изменять оригинал
+    let availableTestimonials = [...testimonials];
+    
+    // Выбираем первый случайный отзыв
+    const firstIndex = Math.floor(Math.random() * availableTestimonials.length);
+    const firstTestimonial = availableTestimonials[firstIndex];
+    
+    // Удаляем выбранный отзыв из доступных, чтобы не повторяться
+    availableTestimonials.splice(firstIndex, 1);
+    
+    // Выбираем второй случайный отзыв
+    const secondIndex = Math.floor(Math.random() * availableTestimonials.length);
+    const secondTestimonial = availableTestimonials[secondIndex];
+    
+    // Обновляем отзывы на странице
+    document.getElementById('testimonial-text-1').textContent = `"${firstTestimonial.text}"`;
+    document.getElementById('testimonial-author-1').innerHTML = `<strong>${firstTestimonial.author.split(', ')[0]}</strong>, ${firstTestimonial.author.split(', ')[1]}`;
+    
+    document.getElementById('testimonial-text-2').textContent = `"${secondTestimonial.text}"`;
+    document.getElementById('testimonial-author-2').innerHTML = `<strong>${secondTestimonial.author.split(', ')[0]}</strong>, ${secondTestimonial.author.split(', ')[1]}`;
+}
+
+// Обновляем функцию generateRandomGift
+function generateRandomGift() {
+    if (giftsLeft <= 0) {
+        alert("Все подарки закончились! Возвращайтесь завтра.");
+        generateBtn.disabled = true;
+        generateBtn.innerHTML = '<i class="fas fa-ban"></i><span>Подарки закончились</span>';
+        return;
+    }
+    
+    // Выбираем случайный подарок из массива
+    const randomIndex = Math.floor(Math.random() * absurdGifts.length);
+    const gift = absurdGifts[randomIndex];
+    
+    // Генерируем уникальный ID
+    const giftId = Math.floor(Math.random() * 900) + 100;
+    
+    // Вычисляем цену со скидкой
+    const discountedPrice = Math.round(gift.originalPrice * (1 - gift.discount / 100));
+    
+    // Обновляем DOM
+    giftTitle.textContent = gift.title;
+    giftDescription.textContent = gift.description;
+    originalPrice.textContent = `${gift.originalPrice.toLocaleString()} ₽`;
+    discountPrice.textContent = `${discountedPrice.toLocaleString()} ₽`;
+    discountPercent.textContent = gift.discount > 0 ? `-${gift.discount}%` : "Без скидки";
+    giftMainIcon.className = gift.icon;
+    giftIdElement.textContent = giftId;
+    
+    // Уменьшаем количество оставшихся подарков
+    giftsLeft--;
+    giftsLeftElement.textContent = giftsLeft;
+    
+    // Обновляем прогресс бар
+    const progressPercentage = (750 - giftsLeft) / 750 * 100;
+    progressFill.style.width = `${progressPercentage}%`;
+    
+    // Запускаем таймер подарка
+    startGiftTimer();
+    
+    // Генерируем новые отзывы
+    generateRandomTestimonials();
+    
+    // Добавляем подарок в историю
+    generatedGifts.push({
+        id: giftId,
+        title: gift.title,
+        timestamp: new Date()
+    });
+    
+    // Анимация кнопки
+    generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Генерируем еще...</span>';
+    generateBtn.disabled = true;
+    
+    setTimeout(() => {
+        generateBtn.innerHTML = '<i class="fas fa-magic"></i><span>Сгенерировать подарок</span>';
+        generateBtn.disabled = false;
+    }, 1500);
+}
+
+// Обновляем функцию init
+function init() {
+    // Запускаем основной таймер
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    
+    // Запускаем таймер подарка
+    setInterval(updateGiftTimer, 1000);
+    
+    // Генерируем начальные отзывы
+    generateRandomTestimonials();
+    
+    // Событие для кнопки генерации
+    generateBtn.addEventListener('click', generateRandomGift);
+    
+    // Генерируем первый подарок при загрузке
+    setTimeout(generateRandomGift, 1000);
+    
+    // Добавляем эффект параллакса для декоративных элементов
+    window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        
+        const circles = document.querySelectorAll('.decoration-circle');
+        circles.forEach((circle, index) => {
+            const speed = index === 0 ? 0.05 : index === 1 ? 0.03 : 0.07;
+            circle.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+        });
+    });
+}
+
 // Массив абсурдных подарков
 const absurdGifts = [
     {
