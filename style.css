@@ -648,26 +648,24 @@ footer {
     }
 }
 
-@media (max-width: 576px) {
-    .hero-content h2 {
-        font-size: 1.8rem;
+@media (max-width: 1200px) {
+    .testimonials-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    
-    .countdown-item {
-        min-width: 70px;
-        padding: 15px 5px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-container {
+        grid-template-columns: 1fr;
     }
-    
-    .countdown-item span {
-        font-size: 2rem;
-    }
-    
-    .generate-btn {
-        padding: 15px 30px;
-        font-size: 1rem;
-    }
-    
-    .gift-card-header, .gift-content, .gift-footer {
-        padding: 20px;
-    }
+}
+
+/* Улучшаем внешний вид для большего количества отзывов */
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 }
