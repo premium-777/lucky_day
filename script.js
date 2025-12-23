@@ -109,9 +109,9 @@ const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
 
-// Устанавливаем дату окончания акции (через 10 дней)
+// Устанавливаем дату окончания акции (через 1 день)
 const countdownDate = new Date();
-countdownDate.setDate(countdownDate.getDate() + 10);
+countdownDate.setDate(countdownDate.getDate() + 1);
 countdownDate.setHours(23, 59, 59, 999);
 
 // Таймер обратного отсчета
@@ -145,12 +145,12 @@ function updateCountdown() {
     updateGiftTimer();
 }
 
-// Таймер для конкретного подарка (15 минут)
+// Таймер для конкретного подарка (5 минут)
 let giftEndTime = null;
 
 function startGiftTimer() {
     giftEndTime = new Date();
-    giftEndTime.setMinutes(giftEndTime.getMinutes() + 15);
+    giftEndTime.setMinutes(giftEndTime.getMinutes() + 5);
     updateGiftTimer();
 }
 
